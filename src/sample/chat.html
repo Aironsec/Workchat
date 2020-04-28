@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript">
+            var height = 0;
+            var attempt = 0;
+            var intS = 0;
+        function scrollToEndPage() {
+                console.log("height:" + height + " scrollHeight:" + document.body.scrollHeight + " att:" + attempt );
+                if (height < document.body.scrollHeight) {
+                    height = document.body.scrollHeight;
+                    window.scrollTo(0, height); attempt++;
+                } else {
+                    clearInterval(intS);
+                }
+            }
+        function mesBoobl(whoBoobl, idMes, textBoobl){
+            var tagP = document.createElement ('p');
+            tagP.className = whoBoobl;
+            tagP.id = idMes;
+            tagP.innerHTML = textBoobl;
+            document.body.append(tagP);
+
+            intS = setInterval(scrollToEndPage,100);
+        }
+
+    </script>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+</body>
+</html>
